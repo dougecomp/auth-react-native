@@ -56,8 +56,8 @@ export const AuthProvider: React.FC = ({children}) => {
     function signOut() {
 
         AsyncStorage.clear().then(() => {
-        setUser(null);
-
+            setUser(null);
+            api.defaults.headers.Authorization = '';
         });
 
     }
